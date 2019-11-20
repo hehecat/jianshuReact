@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## React 仿简书
-慕课网项目，项目预览：https://hehecat.github.io/react-jianshu
+慕课网项目，项目预览：https://hehecat.github.io/jianshuReact
 
 In the project directory, you can run:
 
