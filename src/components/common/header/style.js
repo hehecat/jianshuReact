@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import logoPic from '../../statics/logo.png'
+import logoPic from '../../../statics/logo.png'
 export const HeaderWraper = styled.header`
   height: 55px;
   border-bottom:1px solid #eee;
@@ -71,31 +71,30 @@ export const NavSearch = styled.input.attrs({
   border:none;
   outline:none; 
 
-  /* &.focused{
-    width:300px;
-  } */
   
-  &::placeholder{
+  &::placeholder {
     color:#999;
   }
+  &.focused {
+    width:240px;
+  }
+  &.slide-enter {
+    width:160px;
+    transition: all  .2s ease-out ;
+  }
+  &.slide-enter-active {
+    width:240px;
+  }
+  &.slide-enter-done {
+    width:240px;
+  }
+  
 
-  .slide-enter {
-    width:100px;
-  }
-  .slide-enter-active {
-    width:200px;
-    transition: ease-in 2s all;
-  }
-  .slide-enter-done {
-    width:200px;
-    transition: ease-in 2s all;
-  }
   &.slide-exit {
-    opacity: 1;
+    transition: all  .2s ease-out ;
   }
   &.slide-exit-active {
-    opacity: 0;
-    transition: opacity 200ms;
+    width:160px;
   }
 `
 
