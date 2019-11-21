@@ -1,7 +1,5 @@
-import headerReducer from '../components/common/header/store/reducer'
-import {combineReducers, createStore} from 'redux'
+import {createStore} from 'redux'
+import reducer from './reducer'
 
-const reducer = combineReducers({header:headerReducer})
 const store = createStore(reducer)
-
 export default store
