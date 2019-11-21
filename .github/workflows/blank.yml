@@ -16,4 +16,4 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: build
-        BUILD_SCRIPT: yarn  && yarn build && yarn run deploy
+        BUILD_SCRIPT: sudo apt install git && yarn  && yarn build && yarn run deploy

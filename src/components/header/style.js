@@ -18,7 +18,7 @@ export const Logo = styled.a.attrs({
 
 export const Nav = styled.nav`
   max-width:1440px;
-  min-width:768px;
+  min-width:930px;
   margin:0 auto;
 `
 
@@ -43,6 +43,7 @@ position:relative;
 export const SearchWrapper = styled.div`
   float:left;
   position: relative;
+
   .iconfont{
     position:absolute;
     right:5px;
@@ -50,7 +51,9 @@ export const SearchWrapper = styled.div`
     width:30px;
     height:30px;
     border-radius:15px;
+
   }
+
 `
 
 export const NavSearch = styled.input.attrs({
@@ -67,8 +70,32 @@ export const NavSearch = styled.input.attrs({
   font-size:14px;
   border:none;
   outline:none; 
+
+  /* &.focused{
+    width:300px;
+  } */
+  
   &::placeholder{
     color:#999;
+  }
+
+  .slide-enter {
+    width:100px;
+  }
+  .slide-enter-active {
+    width:200px;
+    transition: ease-in 2s all;
+  }
+  .slide-enter-done {
+    width:200px;
+    transition: ease-in 2s all;
+  }
+  &.slide-exit {
+    opacity: 1;
+  }
+  &.slide-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
   }
 `
 
@@ -95,6 +122,11 @@ export const Button = styled.button`
    padding: 0 20px;
    border:1px solid #ec6149;
    &.reg{
-     color:#ec6149;
+    background:white;
+    color:#ea6f5a;
+   }
+   &.write{
+    background:#ea6f5a;
+    color:white;
    }
 `

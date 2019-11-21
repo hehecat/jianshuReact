@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import {
   HeaderWraper,
   Logo,
@@ -12,6 +13,25 @@ import {
 
 class Header extends Component {
 
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      focused: false,
+    }
+  }
+
+  handleFocus = () => {
+    this.setState({
+      focused: true
+    })
+  }
+
+  handleBlur = () => {
+    this.setState({
+      focused: false
+    })
+  }
 
   render() {
     return (
@@ -20,17 +40,31 @@ class Header extends Component {
           <Logo />
           <NavItem className='left'>首页</NavItem>
           <NavItem className='left'>下载App</NavItem>
-          <SearchWrapper>
-            <NavSearch></NavSearch>
-            <span className="iconfont">&#xe66f;</span>
-          </SearchWrapper>
+          <CSSTransition
+            in={this.state.focused}
+            timeout={200}
+            classNames="slide"  
+            // unmountOnExit
+          >
+            <SearchWrapper>
+              <NavSearch
+                className={this.state.focused ? 'focused' : ''}
+                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+              ></NavSearch>
+              <span
+                className={`iconfont ${this.state.focused ? 'focused' : ''}`}
+              >&#xe66f;</span>
+            </SearchWrapper>
+          </CSSTransition>
+
 
           <Addition>
-            <Button>
+            <Button className='write'>
               <span className="iconfont pen">&#xe61c;</span>
               写文章
               </Button>
-            <Button>注册</Button>
+            <Button className='reg'>注册</Button>
           </Addition>
           <NavItem className='right'>登陆</NavItem>
           <NavItem className='right'>
