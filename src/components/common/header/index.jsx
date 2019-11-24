@@ -36,9 +36,12 @@ class Header extends Component {
 
     if(newList.length){
       for (let i = page * 10;  i < (page + 1) * 10; i++) {
-        pageList.push(
-          <SerchINfoItem key={newList[i]}>{newList[i]}</SerchINfoItem>
-        )
+        if(newList[i]){
+          pageList.push(
+            <SerchINfoItem key={newList[i]}>{newList[i]}</SerchINfoItem>
+          )
+        }
+      
       }
     }
 
@@ -60,11 +63,8 @@ class Header extends Component {
     }
   }
 
-  handelMouseEnter = () => {
-
-  }
-
   render() {
+    const {handleInputFocus,focused,handleInputBlur,list} = this.props;
     return (
       <HeaderWraper>
         <Nav>
@@ -74,14 +74,14 @@ class Header extends Component {
 
           <SearchWrapper>
             <CSSTransition
-              in={this.props.focused}
+              in={focused}
               timeout={200}
               classNames="slide"
             >
               <NavSearch
-                className={this.props.focused ? 'focused' : ''}
-                onFocus={this.props.handleInputFocus}
-                onBlur={this.props.handleInputBlur}
+                className={focused ? 'focused' : ''}
+                onFocus={()=>{handleInputFocus(list)}}
+                onBlur={handleInputBlur}
               ></NavSearch>
             </CSSTransition>
 
@@ -123,11 +123,12 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleInputFocus() {
-      const action = actionCreators.searchFocus()
-      const action2 = actionCreators.getList()
-      dispatch(action)
-      dispatch(action2)
+    handleInputFocus(list) {
+      console.log(list);
+      
+      (list.size===0) && dispatch(actionCreators.getList())
+        const action = actionCreators.searchFocus()
+        dispatch(action)
     },
     handleInputBlur() {
       const action = actionCreators.searchBlur()
@@ -143,7 +144,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     handleChangePage(page,totalPage) {
       if(page+1>=totalPage){
-      const action = actionCreators.changePage(1)
+      const action = actionCreators.changePage(0)
       dispatch(action)
       }else{
         const action = actionCreators.changePage(page+1)
