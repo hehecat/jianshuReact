@@ -124,7 +124,6 @@ const mapStateToProps = (state, props) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus(list) {
-      console.log(list);
       
       (list.size===0) && dispatch(actionCreators.getList())
         const action = actionCreators.searchFocus()

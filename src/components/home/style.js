@@ -19,9 +19,21 @@ export const HomeLeft = styled.div`
 `
 
 export const HomeRight = styled.div`
-  width: 240px;
+  width: 280px;
   float: right;
 `
+
+export const RecommendWrapper = styled.div`
+  margin:30px 0;
+  width: 280px;
+`
+export const RecommendItem = styled.div`
+  width: 280px;
+  height: 50px;
+  background: url(${(props)=>{return props.imgUrl}});
+  background-size:cover; 
+`
+
 export const ListItem = styled.div`
   overflow: hidden;
   padding: 20px 0;
@@ -32,6 +44,31 @@ export const ListItem = styled.div`
     height: 100px;
     float: right;
     border-radius: 10px;
+  }
+`
+export const ItemFoot = styled.div`
+  color: #b4b4b4;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  .grade {
+    color:  #ea6f5a;
+    margin-right: 10px;
+    i {
+      font-size: 12px;
+    }
+  }
+  a {
+    color: #b4b4b4;
+    margin-right: 10px;
+    text-decoration: none;
+    i {
+      font-size: 13px;
+    }
+  }
+  i {
+    font-size: 14px;
+    margin-right: 2px;
   }
 `
 
