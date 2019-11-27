@@ -1,19 +1,16 @@
-name: GitHub Actions Build and Deploy
-on:
-  push:
-    branches:
-      - master
+name: Build and Deploy
+on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v1
 
     - name: Build and Deploy
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
-        BUILD_SCRIPT: npm install && npm run build
+        BASE_BRANCH: master # The branch the action should deploy from.
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: build # The folder the action should deploy.
