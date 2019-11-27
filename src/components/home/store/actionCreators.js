@@ -17,6 +17,13 @@ export const addHomeArticleList = (articleList)=>{
   }
 }
 
+export const getScrollTop = (show)=>{
+  return {
+    type: actionTypes.CHANGE_SCROLL_SHOW,
+    show
+  }
+}
+
 export const getHomeInfo = ()=>{
   return function(dispatch) {
     axios.get('https://hehecat.github.io/jianshuReact/api/home.json').then(res=>{

@@ -2,7 +2,8 @@ import { fromJS } from 'immutable'
 import { actionTypes } from './index'
 const defaultState = fromJS({
   articleList: [],
-  recommendList: []
+  recommendList: [],
+  showScroll: false
 })
 
 export default (state = defaultState, action) => {
@@ -12,10 +13,14 @@ export default (state = defaultState, action) => {
         articleList: fromJS(action.articleList),
         recommendList: fromJS(action.recommendList),
       })
+
     case actionTypes.ADD_HOME_ARTICLE_LIST:
       let list = state.get('articleList').toJS();
-      list= list.concat(action.articleList);
-      return state.set('articleList',fromJS(list))
+      list = list.concat(action.articleList);
+      return state.set('articleList', fromJS(list))
+
+    case actionTypes.CHANGE_SCROLL_SHOW:
+      return state.set('showScroll', fromJS(action.show))
     default:
       return state
   }
