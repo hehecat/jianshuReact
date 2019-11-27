@@ -44,7 +44,7 @@ export const changeList = (data)=>{
 
 export const getList = ()=>{
   return (dispatch)=>{
-    axios.get('/api/headerList.json').then(res=>{
+    axios.get('https://hehecat.github.io/jianshuReact/api/headerList.json').then(res=>{
      const action = changeList(res.data.data)
      dispatch(action)
       
