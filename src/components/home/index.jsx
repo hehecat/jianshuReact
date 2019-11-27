@@ -39,7 +39,8 @@ const mapDispatchToProps = (dispatch)=>{
     changeHomeData(){
       const action = actionCreators.getHomeInfo();
       dispatch(action);
-    }
+    },
+   
   }
 }
 export default  connect(mapStateToProps, mapDispatchToProps)(Home)

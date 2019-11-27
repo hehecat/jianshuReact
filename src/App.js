@@ -10,16 +10,15 @@ import Detail from './components/detail'
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
-        <Header />
+
         <BrowserRouter>
+        <Header />
         <div>
           <Route path='/detail' exact component={Detail}></Route>
           <Route path='/' exact  component={Home}></Route>
-        </div>
-          
+        </div> 
         </BrowserRouter>
-      </div>
+
     </Provider>
 
   );
