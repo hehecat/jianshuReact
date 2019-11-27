@@ -64,7 +64,6 @@ const mapDispatchToProps = (dispatch)=>{
     },
    changeScrollShow() {
       let scroll = document.documentElement.scrollTop;
-      console.log(scroll);
       
       dispatch(actionCreators.getScrollTop(scroll > 200));
     }
