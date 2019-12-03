@@ -10,7 +10,7 @@ jobs:
       - name: Install # The project is built using npm and placed in the 'build' folder.
         run: |
           npm install
-          npm run build
+          npm run-script build
           
       - name: Upload Artifacts # The project is then uploaded as an artifact named 'site'.
         uses: actions/upload-artifact@v1
