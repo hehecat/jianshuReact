@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { connect } from 'react-redux'
+import {Link} from 'react-router-dom'
 import { actionCreators } from './store'
 import {
   HeaderWraper,
@@ -64,13 +65,14 @@ class Header extends Component {
   }
 
   render() {
-    const {handleInputFocus,focused,handleInputBlur,list} = this.props;
+    const {handleInputFocus,focused,handleInputBlur,list,login} = this.props;
     return (
       <HeaderWraper>
         <Nav>
           <Logo />
           <NavItem className='left'>首页</NavItem>
           <NavItem className='left'>下载App</NavItem>
+
 
           <SearchWrapper>
             <CSSTransition
@@ -100,7 +102,14 @@ class Header extends Component {
               </Button>
             <Button className='reg'>注册</Button>
           </Addition>
-          <NavItem className='right'>登陆</NavItem>
+          {
+            login?           
+            <NavItem className='right'>退出</NavItem>:
+            <Link to='login'>
+              <NavItem className='right'>登陆</NavItem>
+            </Link>
+          }
+         
           <NavItem className='right'>
             <span className="iconfont">&#xe636;</span>
           </NavItem>
@@ -117,7 +126,8 @@ const mapStateToProps = (state, props) => {
     focused: state.get('header').get('focused'),
     page: state.get('header').get('page'),
     totalPage: state.getIn(['header','totalPage']),
-    mouseIn: state.get('header').get('mouseIn')
+    mouseIn: state.get('header').get('mouseIn'),
+    login: state.get('login').get('login'),
   }
 }
 
