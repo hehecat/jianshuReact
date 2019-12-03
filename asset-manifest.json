@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/jianshuReact/static/css/main.81401f00.chunk.css",
+    "main.js": "/jianshuReact/static/js/main.50d9d8af.chunk.js",
+    "main.js.map": "/jianshuReact/static/js/main.50d9d8af.chunk.js.map",
+    "runtime-main.js": "/jianshuReact/static/js/runtime-main.b737587f.js",
+    "runtime-main.js.map": "/jianshuReact/static/js/runtime-main.b737587f.js.map",
+    "static/js/2.fba0603a.chunk.js": "/jianshuReact/static/js/2.fba0603a.chunk.js",
+    "static/js/2.fba0603a.chunk.js.map": "/jianshuReact/static/js/2.fba0603a.chunk.js.map",
+    "index.html": "/jianshuReact/index.html",
+    "precache-manifest.e7abefda1c90e38e5f477e4391601d03.js": "/jianshuReact/precache-manifest.e7abefda1c90e38e5f477e4391601d03.js",
+    "service-worker.js": "/jianshuReact/service-worker.js",
+    "static/css/main.81401f00.chunk.css.map": "/jianshuReact/static/css/main.81401f00.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b737587f.js",
+    "static/js/2.fba0603a.chunk.js",
+    "static/css/main.81401f00.chunk.css",
+    "static/js/main.50d9d8af.chunk.js"
+  ]
+}
