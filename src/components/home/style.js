@@ -4,7 +4,6 @@ export const HomeWapper = styled.div`
   /* overflow: hidden; */
   width: 960px;
   margin: 0 auto;
-
 `
 
 export const HomeLeft = styled.div`
@@ -86,4 +85,31 @@ export const ListInfo = styled.div`
     font-size: 13px;
     color:#999;
   }
+`
+
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  line-height: 20px;
+  margin: 30px auto 60px;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 20px;
+  color: #fff;
+  background-color: #a5a5a5;
+  cursor: pointer;
+  box-sizing: border-box;
+`
+
+export const BackTop = styled.div`
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+  width: 60px;
+  height: 60px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  font-size: 24px;
+  text-align: center;
 `
