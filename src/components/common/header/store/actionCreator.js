@@ -44,7 +44,7 @@ export const changeList = (data)=>{
 
 export const getList = ()=>{
   return (dispatch)=>{
-    axios.get('/api/headerList.json').then(res=>{
+    axios.get(process.env.PUBLIC_URL+'/api/headerList.json').then(res=>{
      const action = changeList(res.data.data)
      dispatch(action)
       

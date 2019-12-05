@@ -10,7 +10,7 @@ const loginInfo = (login) => {
 
 export const login = (account,password) => {
   return (dispatch) => {
-    axios.get('/api/login.json?account=' + account + '&password=' + password).then((res)=>{
+    axios.get(process.env.PUBLIC_URL+'/api/login.json?account=' + account + '&password=' + password).then((res)=>{
       let data = res.data
       if(data.code === 200) {
         dispatch(loginInfo(data.login))

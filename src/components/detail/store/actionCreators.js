@@ -11,7 +11,7 @@ const changeDetaill = (data) => {
 
 export const getdetaill = (id) => {
   return (dispatch) => {
-    axios.get('/api/detail.json?id='+id).then((res)=>{
+    axios.get(process.env.PUBLIC_URL+'/api/detail.json?id='+id).then((res)=>{
       let data = res.data
       if(data.code === 200) {
         dispatch(changeDetaill(data.data))
